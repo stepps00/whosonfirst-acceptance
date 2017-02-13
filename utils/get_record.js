@@ -1,5 +1,5 @@
 var fs = require('fs')
-
+var colors = require('colors');
 // request from API
 module.exports.get_record_from_api = function api_request(recordid)
 {

@@ -13,10 +13,10 @@ function isparent(recordid, parentlayer, parentid)
 {
     var result = get_record.get_record_from_disk(recordid.toString())
     if (result.properties["wof:hierarchy"][0][parentlayer + '_id'] === parentid) {
-    	console.log('WOOHOO')
+    	console.log('WOOHOO'.green)
     	successes ++
     }
-    	else {console.log('BOOHOO')
+    	else {console.log('BOOHOO'.red)
     	failures ++
     }
 }
@@ -61,5 +61,5 @@ module.exports.run = function()
 	isparent(1108730693, 'country', 85633805)
 	isparent(102088003, 'country', 85633805)
 	isparent(1108730695, 'country', 85633805)
-	console.log('Successes:', successes, 'Failures:', failures)
+	console.log('Successes:'.green, successes, 'Failures:'.red, failures)
 }

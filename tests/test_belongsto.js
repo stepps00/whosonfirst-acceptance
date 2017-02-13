@@ -1,4 +1,5 @@
 var get_record = require('../utils/get_record.js')
+var colors = require('colors');
 var successes = 0
 var failures = 0
 // pulling everything together
@@ -10,10 +11,10 @@ function condition(recordid, belongsto_ids)
     return result.properties["wof:belongsto"].indexOf(id) !== -1
     }
     if (belongsto_ids.every(belongsto)) {
-    	console.log('WOOHOO')
+    	console.log('WOOHOO'.green)
     	successes ++  
     }
-    	else {console.log('BOOHOO')
+    	else {console.log('BOOHOO'.red)
     	failures ++
     }
 }
@@ -24,5 +25,5 @@ module.exports.run = function()
 	failures = 0
 	console.log('Test: belongsto')
 	condition(1108730699, [102191581, 85633287, 85688877])
-	console.log('Successes:', successes, 'Failures:', failures)
+	console.log('Successes:'.green, successes, 'Failures:'.red, failures)
 }
