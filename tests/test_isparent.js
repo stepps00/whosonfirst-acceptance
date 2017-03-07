@@ -13,10 +13,10 @@ function isparent(recordid, parentlayer, parentid)
 {
     var result = get_record.get_record_from_disk(recordid.toString())
     if (result.properties["wof:hierarchy"][0][parentlayer + '_id'] === parentid) {
-    	console.log('WOOHOO'.green)
+    	console.log('Test passed.'.green)
     	successes ++
     }
-    	else {console.log('BOOHOO'.red)
+    	else {console.log('Test failed.'.red)
     	failures ++
     }
 }

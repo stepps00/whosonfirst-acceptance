@@ -11,10 +11,10 @@ function condition(recordid, belongsto_ids)
     return result.properties["wof:belongsto"].indexOf(id) !== -1
     }
     if (belongsto_ids.every(belongsto)) {
-    	console.log('WOOHOO'.green)
+    	console.log('Test passed.'.green)
     	successes ++  
     }
-    	else {console.log('BOOHOO'.red)
+    	else {console.log('Test failed.'.red)
     	failures ++
     }
 }
